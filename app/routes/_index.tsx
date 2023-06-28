@@ -21,16 +21,14 @@ export default function Index() {
   const projects = projectsData.map(project => {
     return (
       <Project
-        key = {project.id}
-        project = {project}
+        key={project.id}
+        project={project}
       />
     )
   })
 
-
   return (
     <div className="container">
-
       <nav>
         <h3 className="avalon-logo">AVALON</h3><p className="avalon-creator">JP Magtang</p>
       </nav>
@@ -51,9 +49,9 @@ export default function Index() {
 
       <div className="footer">
         <ul>
-          <li>Creations</li>
-          <li>About</li>
-          <li>Connect</li>
+          <li><Link to="">Creations</Link></li>
+          <li><Link to="about">About</Link></li>
+          <li><Link to="connect">Connect</Link></li>
         </ul>
       </div>
 
