@@ -2,7 +2,8 @@ import type { LinksFunction } from "@remix-run/node";
 import { Link } from "@remix-run/react";
 import type { V2_MetaFunction } from "@remix-run/node";
 import stylesUrl from "~/styles/index.css";
-import Projects from "~/components/Projects";
+import Project from "~/components/Project";
+import projectsData from "~/projects-data";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesUrl },
@@ -10,17 +11,28 @@ export const links: LinksFunction = () => [
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: "Avalon Creations" },
+    { name: "description", content: "Welcome to Avalon!" },
   ];
 };
 
+
 export default function Index() {
+  const projects = projectsData.map(project => {
+    return (
+      <Project
+        key = {project.id}
+        project = {project}
+      />
+    )
+  })
+
+
   return (
     <div className="container">
 
       <nav>
-        <h2 className="avalon-logo">AVALON</h2><p className="avalon-creator">JP Magtang</p>
+        <h3 className="avalon-logo">AVALON</h3><p className="avalon-creator">JP Magtang</p>
       </nav>
 
       <div className="main">
@@ -32,13 +44,9 @@ export default function Index() {
           <li>Software Development</li>
         </ul>
       </div>
+
       <div className="main-projects">
-        <Projects />
-        <Projects />
-        <Projects />
-        <Projects />
-        <Projects />
-        <Projects />
+        {projects}
       </div>
 
       <div className="footer">
