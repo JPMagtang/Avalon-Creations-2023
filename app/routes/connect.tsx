@@ -1,0 +1,33 @@
+import type { LinksFunction } from "@remix-run/node";
+import stylesUrl from "~/styles/connect.css";
+import Footer from "~/components/Footer";
+
+export const links: LinksFunction = () => [
+    { rel: "stylesheet", href: stylesUrl },
+  ];
+  
+
+export default function About() {
+    return (
+      <div className="container">
+        <nav>
+          <h3 className="avalon-logo">AVALON</h3><p className="avalon-creator">JP Magtang</p>
+        </nav>
+        <div className="main">
+          <p>Curious about something?</p>
+          <h1 className="main-header">CONNECT</h1>
+          <form>
+            <fieldset>
+                <label htmlFor="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="traveler@world.com" />
+                <label htmlFor="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" placeholder="Your Subject" />
+                <label htmlFor="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Let me know your thoughts..." />
+            </fieldset>
+          </form>
+        </div>
+        <Footer />
+      </div>
+    );
+  }
