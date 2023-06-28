@@ -47,13 +47,19 @@ nav {
     align-items: baseline;
 }
 
+body{
+  margin:0;
+  padding: 0;
+}
+
 .container {
     padding: 50px;
     height: 100vh;
 }
 
 .main {
-    margin-top: 150px;
+    margin-top: 15vh;
+    /* margin-top: 150px; */
 }
 
 /* .main p {
@@ -76,9 +82,9 @@ nav {
 
 .main-projects {
     position: absolute;
-    top: 20vh;
-    height: 60vh;
-    max-height: 60vh;
+    top: 25vh;
+    height: 50vh;
+    max-height: 50vh;
     right: 50px;
     display: flex;
     flex-direction: column;
