@@ -3,7 +3,20 @@
     font-style: normal;
     font-weight: normal;
     src: local('Advent Pro Regular'), url("/fonts/AdventPro/AdventPro-Regular.woff") format('woff');
+}
+
+.container {
+    animation: fade-in 3s;
+}
+
+@fade-in {
+    0% {
+        opacity: 0;
     }
+    100% {
+        opacity: 1;
+    }
+}
 
 * {
     font-family: "Advent Pro Regular", "Lato", sans-serif;
@@ -29,7 +42,6 @@ label {
 }
 
 ul {
-    /* border: 1px solid red; */
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
@@ -48,9 +60,9 @@ nav {
     align-items: baseline;
 }
 
-body{
-  margin:0;
-  padding: 0;
+body {
+    margin: 0;
+    padding: 0;
 }
 
 fieldset {
@@ -99,12 +111,7 @@ fieldset textarea {
 
 .main {
     margin-top: 15vh;
-    /* margin-top: 150px; */
 }
-
-/* .main p {
-    margin-bottom: -10px;
-} */
 
 .main p {
     margin-top: 30px;
@@ -136,7 +143,7 @@ fieldset textarea {
 
 .main-projects::-webkit-scrollbar {
     display: none;
-  }
+}
 
 .project {
     display: flex;
@@ -148,4 +155,16 @@ fieldset textarea {
     margin-left: 1rem;
 }
 
+a,
+a:visited {
+    text-decoration: none;
+    color: inherit;
+}
 
+a:hover {
+    font-weight: bold;
+}
+
+/* a, a:visited, a:hover, a:active {
+    color: inherit;
+  } */

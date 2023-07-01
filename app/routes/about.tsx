@@ -1,5 +1,7 @@
 import type { LinksFunction } from "@remix-run/node";
-import stylesUrl from "~/styles/about.css";
+import stylesUrl from "~/styles/global-large.css";
+
+import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 
 export const links: LinksFunction = () => [
@@ -10,9 +12,7 @@ export const links: LinksFunction = () => [
 export default function About() {
     return (
       <div className="container">
-        <nav>
-          <h3 className="avalon-logo">AVALON</h3><p className="avalon-creator">JP Magtang</p>
-        </nav>
+        <Header />
         <div className="main">
           <p>Greetings! I’m</p>
           <h1 className="main-header">JP MAGTANG</h1>

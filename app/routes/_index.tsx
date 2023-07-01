@@ -1,14 +1,15 @@
 import type { LinksFunction } from "@remix-run/node";
-import { Link } from "@remix-run/react";
 import type { V2_MetaFunction } from "@remix-run/node";
-import stylesUrl from "~/styles/index.css";
+import stylesUrl from "~/styles/global-large.css";
 import projectsData from "~/projects-data";
+
 //Components
+import Header from "~/components/Header";
 import Project from "~/components/Project";
 import Footer from "~/components/Footer";
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesUrl },
+  { rel: "stylesheet", href: stylesUrl }
 ];
 
 export const meta: V2_MetaFunction = () => {
@@ -17,7 +18,6 @@ export const meta: V2_MetaFunction = () => {
     { name: "description", content: "Welcome to Avalon!" },
   ];
 };
-
 
 export default function Index() {
   const projects = projectsData.map(project => {
@@ -28,12 +28,10 @@ export default function Index() {
       />
     )
   })
-
+  
   return (
     <div className="container">
-      <nav>
-        <h3 className="avalon-logo">AVALON</h3><p className="avalon-creator">JP Magtang</p>
-      </nav>
+      <Header />
       <div className="main">
         <p>A REALM FOR DIGITAL</p>
         <h1 className="main-header">CREATIONS</h1>
