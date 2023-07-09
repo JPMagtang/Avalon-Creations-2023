@@ -1,9 +1,11 @@
 export default function Project(props : any) {
     return (
         <div className="project">
-            <p>{props.project.yearCreated}|</p><p>{props.project.projectType}</p>
+            <p>{props.yearCreated}|</p><p>{props.projectType}</p>
             <h2>
-                {props.project.projectName}
+                <a href={props.projectLink} target="_blank">
+                    {props.projectName}
+                </a>
             </h2>
         </div>
     )
