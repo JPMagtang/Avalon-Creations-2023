@@ -1,3 +1,21 @@
+/* Using Autumn color palette */
+/* :root {
+    --main-background: #1A2A43;
+    --footer-nav: #3A5988;
+    --text-main: #C18638;
+    --text-general: white;
+    --text-hover: #C18638;
+} */
+
+/* :root {
+    --main-background: white;
+    --footer-nav: black;
+    --footer-text: white;
+    --text-main: black;
+    --text-general: black;
+    --text-hover: white;
+} */
+
 @font-face {
     font-family: "Advent Pro Regular";
     font-style: normal;
@@ -5,23 +23,37 @@
     src: local('Advent Pro Regular'), url("/fonts/AdventPro/AdventPro-Regular.woff") format('woff');
 }
 
-/* .app {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.fade {
+    position: absolute;
     height: 100vh;
-} */
+    width: 100vw;
+    background-color: white;
+    animation: fade 2s ease-in;
+    z-index: 1;
+}
+
+@keyframes fade {
+    from {  
+        opacity:1;  
+    }  
+ 
+    to {  
+        opacity:0;  
+    }  
+}
 
 * {
     font-family: "Advent Pro Regular", "Lato", sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: var(--text-general);
     /* border: 1px solid red; */
 }
 
 h1 {
     font-size: 6.25rem;
+    color: var(--text-main);
 }
 
 h2 {
@@ -39,10 +71,6 @@ label {
 
 ul {
     list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 30vw;
     padding: 0;
 }
 
@@ -53,12 +81,10 @@ li {
 nav {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
 }
 
 fieldset {
-    position: absolute;
-    top: 25vh;
     height: 50vh;
     max-height: 50vh;
     width: 40vw;
@@ -87,7 +113,7 @@ fieldset label {
 
 fieldset textarea {
     width: 100%;
-    height: 210px;
+    height: 200px;
     border-radius: 5px;
     border: 1px solid gray;
     padding: 1rem;
@@ -95,32 +121,47 @@ fieldset textarea {
     font-size: 1rem;
 }
 
+.avalon-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 70px;
+}
+
+.avalon-icon {
+    height: inherit;
+    margin-right: 1rem;
+}
 .container {
-    padding: 50px;
     height: 100vh;
+    padding: 50px;
+    background-color: var(--main-background);
 }
 
 .main {
-    margin-top: 15vh;
+    margin-top: 12vh;
+    display: flex;
+    justify-content: space-between;
+    overflow: visible;
 }
 
-.main p {
-    /* margin-top: 30px; */
+.main-content p {
     width: 50vw;
 }
 
-.footer ul {
-    max-width: 30vw;
+.main-content ul {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    width: 50vw;
 }
 
-.footer {
-    position: absolute;
-    bottom: 65px;
+.main-content ul li {
+    margin-right: 2rem;
 }
 
 .main-projects {
-    position: absolute;
-    top: 25vh;
+    margin-top: 1rem;
     height: 50vh;
     max-height: 50vh;
     max-width: 100vw;
@@ -139,6 +180,7 @@ fieldset textarea {
 .project {
     display: flex;
     align-items: baseline;
+    overflow: unset;
     /* padding: calc(var(--pad)*2 + 96px) calc(var(--pad)*2); */
 }
 
@@ -146,19 +188,54 @@ fieldset textarea {
     margin-left: 1rem;
 }
 
+.footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.footer ul {
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    width: 30vw;
+    bottom: 80px;
+    background-color: black;
+    border-radius: 1rem;
+    padding: .5rem 0 .5rem 0;
+    justify-content: space-evenly;
+}
+
+.footer ul li {
+    color: silver;
+}
+
 a,
 a:visited {
     text-decoration: none;
-    color: inherit;
 }
 
 a:hover {
-    font-weight: bold;
+    color: white;
 }
 
 /* a, a:visited, a:hover, a:active {
     color: inherit;
   } */
+
+@media (max-width: 768px) {
+    .main-projects {
+        right: 50px;
+        height: 35vh;
+        max-height: 35vh;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        row-gap: 50px;
+        overflow-y: auto;
+    }
+}
+
 
 @media (max-width: 480px) {
     h1 {
@@ -180,10 +257,6 @@ a:hover {
 
     ul {
         list-style-type: none;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 50vw;
         padding: 0;
     }
 
@@ -194,7 +267,7 @@ a:hover {
     nav {
         display: flex;
         justify-content: space-between;
-        align-items: baseline;
+        align-items: center;
         gap: 10px;
     }
 
@@ -234,18 +307,34 @@ a:hover {
         font-size: 1rem;
     }
 
+    .avalon-logo {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 40px;
+    }
+    
+    .avalon-icon {
+        height: inherit;
+        margin-right: 0.5rem;
+    }
+
     .container {
         padding: 20px;
         height: 100vh;
     }
 
     .main {
-        margin-top: 14vh;
+        margin-top: 12vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: visible;
     }
 
     .main-projects {
-        position: absolute;
-        top: 48vh;
+        /* position: absolute;
+        top: 45vh; */
         height: 35vh;
         max-height: 35vh;
         right: 20px;
@@ -256,21 +345,36 @@ a:hover {
         overflow-y: auto;
     }
 
-    .main p {
+    .main-content p {
         /* margin-top: 30px; */
-        width: 70vw;
-        
+        width: 100%;
+
     }
-    
+
+    .main-content ul {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .main-content ul li {
+        margin-right: 1rem;
+    }
+
     .footer {
-        position: absolute;
-        bottom: 30px;
+        /* position: absolute; */
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
     
     .footer ul {
-        max-width: 100vw;
-        position: relative;
-        /* left: -50%; */
+        position: fixed;
+        display: flex;
+        flex-wrap: wrap;
+        width: 50vw;
+        bottom: 30px;
+        justify-content: space-evenly;
     }
-
 }

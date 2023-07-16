@@ -1,8 +1,10 @@
 import type { LinksFunction } from "@remix-run/node";
 import type { V2_MetaFunction } from "@remix-run/node";
+import { useState, useEffect } from 'react';
 import stylesUrl from "~/styles/global.css";
 // import stylesSmall from "~/styles/global-small.css";
 import projectsData from "~/projects-data";
+import Fade from "~/components/Fade";
 
 //Components
 import Header from "~/components/Header";
@@ -30,23 +32,37 @@ export default function Index() {
       />
     )
   })
+
+  // PAGE TRANSITION EFFECT
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 0);
+  }, []);
   
+  // TO RESEARCH: Remix.js transitions
   return (
-    <div className="container">
-      <Header />
-      <div className="main">
-        <p>A REALM FOR DIGITAL</p>
-        <h1 className="main-header">CREATIONS</h1>
-        <ul>
-          <li>Architecture</li>
-          <li>UX|UI Design</li>
-          <li>Software Development</li>
-        </ul>
+    loading ? <Fade /> : (
+      <div className="container">
+        <Header />
+        <div className="main">
+          <div className="main-content">
+            <p>A REALM FOR DIGITAL</p>
+            <h1 className="main-header">CREATIONS</h1>
+            <ul>
+              <li>Architecture</li>
+              <li>UX|UI Design</li>
+              <li>Software Development</li>
+            </ul>
+          </div>
+          <div className="main-projects">
+            {projects}
+          </div>
+        </div>
+        <Footer />
       </div>
-      <div className="main-projects">
-        {projects}
-      </div>
-      <Footer />
-    </div>
+    )
   );
 }

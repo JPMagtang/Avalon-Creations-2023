@@ -14,8 +14,10 @@ export default function About() {
       <div className="container">
         <Header />
         <div className="main">
-          <p>Curious about something?</p>
-          <h1 className="main-header">CONNECT</h1>
+          <div className="main-content">
+            <p>Curious about something?</p>
+            <h1 className="main-header">CONNECT</h1>
+          </div>
           <form>
             <fieldset>
                 <label htmlFor="email">Email:</label>

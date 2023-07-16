@@ -1,6 +1,12 @@
 import { Link } from "@remix-run/react";
+import Fade from "./Fade";
 
 export default function Footer() {
+
+    // const isPending =
+    // fade.state === "loading" &&
+    // fade.location.pathname === ;
+
     return (
         <div className="footer">
             <ul>

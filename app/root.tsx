@@ -76,15 +76,11 @@ export default function App() {
         <Links />
       </head>
       <body>
-        {loading ? <Loader /> : (
-          <>
-            {/* <Cursor /> Not working. To figure out */}
-            <Outlet />
-            <ScrollRestoration />
-            <Scripts />
-            <LiveReload />
-          </>
-        )}
+          {/* <Cursor /> Not working. To figure out */}
+          {loading ? <Loader /> : <Outlet />}
+          <ScrollRestoration />
+          <Scripts />
+          <LiveReload />
       </body>
     </html>
   );
