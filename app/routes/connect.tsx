@@ -26,10 +26,12 @@ export default function About() {
                 <input type="text" id="subject" name="subject" placeholder="Your Subject" />
                 <label htmlFor="message">Message:</label>
                 <textarea id="message" name="message" placeholder="Let me know your thoughts..." />
+                <button>Submit</button>
             </fieldset>
           </form>
         </div>
         <Footer />
+        <div className="circular-backing"></div>
       </div>
     );
   }

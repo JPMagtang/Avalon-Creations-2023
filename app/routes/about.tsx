@@ -23,6 +23,7 @@ export default function About() {
           </div>
         </div>
         <Footer />
+        <div className="circular-backing"></div>
       </div>
     );
   }

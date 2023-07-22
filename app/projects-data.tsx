@@ -15,15 +15,15 @@ export default [
     },
     {
         id: 3,
-        projectName: "Project Name",
+        projectName: "Louis Kahn",
         yearCreated: 2023,
         projectType: "Personal",
         projectLink: "",
     },
     {
         id: 4,
-        projectName: "Project Name",
-        yearCreated: 2023,
+        projectName: "Your Favorite Starter",
+        yearCreated: 2022,
         projectType: "Personal",
         projectLink: "",
     },

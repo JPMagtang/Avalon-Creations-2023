@@ -6,7 +6,6 @@
     --text-general: white;
     --text-hover: #C18638;
 } */
-
 /* :root {
     --main-background: white;
     --footer-nav: black;
@@ -15,33 +14,12 @@
     --text-general: black;
     --text-hover: white;
 } */
-
 @font-face {
     font-family: "Advent Pro Regular";
     font-style: normal;
     font-weight: normal;
     src: local('Advent Pro Regular'), url("/fonts/AdventPro/AdventPro-Regular.woff") format('woff');
 }
-
-.fade {
-    position: absolute;
-    height: 100vh;
-    width: 100vw;
-    background-color: white;
-    animation: fade 2s ease-in;
-    z-index: 1;
-}
-
-@keyframes fade {
-    from {  
-        opacity:1;  
-    }  
- 
-    to {  
-        opacity:0;  
-    }  
-}
-
 * {
     font-family: "Advent Pro Regular", "Lato", sans-serif;
     box-sizing: border-box;
@@ -50,53 +28,56 @@
     color: var(--text-general);
     /* border: 1px solid red; */
 }
-
+body {
+    overflow: hidden;
+}
 h1 {
     font-size: 6.25rem;
     color: var(--text-main);
 }
-
 h2 {
     font-size: 3rem;
 }
-
 h3 {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
 }
-
 p,
 label {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
-
 ul {
     list-style-type: none;
     padding: 0;
 }
-
 li {
     font-size: 1.75rem;
 }
-
 nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vh;
+    height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: left top;
+    background-color: #d2d2d2;
+    padding-left: 30px;
+    padding-right: 20px;
 }
-
 fieldset {
+    margin-top: 13vh;
     height: 50vh;
     max-height: 50vh;
-    width: 40vw;
-    max-width: 40vw;
+    width: 35vw;
     right: 50px;
     border: none;
 }
-
 fieldset * {
     display: block;
 }
-
 fieldset input {
     margin-bottom: 2rem;
     width: 100%;
@@ -106,179 +87,185 @@ fieldset input {
     padding-left: 1rem;
     font-size: 1rem;
 }
-
 fieldset label {
     margin-bottom: 15px;
 }
-
 fieldset textarea {
     width: 100%;
-    height: 200px;
+    height: 220px;
     border-radius: 5px;
     border: 1px solid gray;
     padding: 1rem;
     resize: none;
     font-size: 1rem;
 }
-
-.avalon-logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    height: 70px;
+fieldset button {
+    width: 100%;
+    height: 40px;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    margin-top: 3rem;
+    /* padding: 10px; */
 }
-
 .avalon-icon {
+    height: 60px;
+    transform: rotate(90deg);
+}
+.avalon-icon img {
     height: inherit;
-    margin-right: 1rem;
 }
 .container {
     height: 100vh;
-    padding: 50px;
+    padding: 5vh;
+    margin-left: 70px;
     background-color: var(--main-background);
+    overflow: hidden;
 }
-
+.circular-backing {
+    position: fixed;
+    top: -10vh;
+    left: 55%;
+    width: 120vh;
+    height: 120vh;
+    border-radius: 50%;
+    background-color: #d2d2d2;
+    z-index: -1;
+}
 .main {
-    margin-top: 12vh;
     display: flex;
     justify-content: space-between;
-    overflow: visible;
 }
-
+.main-content {
+    margin-top: 13vh;
+}
 .main-content p {
-    width: 50vw;
+    width: 45vw;
 }
-
 .main-content ul {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
     width: 50vw;
 }
-
 .main-content ul li {
     margin-right: 2rem;
 }
-
 .main-projects {
-    margin-top: 1rem;
-    height: 50vh;
-    max-height: 50vh;
+    height: 90vh;
     max-width: 100vw;
-    right: 50px;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     row-gap: 80px;
     overflow-y: auto;
 }
-
 .main-projects::-webkit-scrollbar {
     display: none;
 }
-
 .project {
     display: flex;
     align-items: baseline;
-    overflow: unset;
     /* padding: calc(var(--pad)*2 + 96px) calc(var(--pad)*2); */
 }
-
 .project h2 {
     margin-left: 1rem;
+    text-align: right;
 }
-
 .footer {
     width: 100%;
     display: flex;
-    justify-content: center;
 }
-
 .footer ul {
     position: fixed;
     display: flex;
     flex-wrap: wrap;
     width: 30vw;
-    bottom: 80px;
+    bottom: 10vh;
     background-color: black;
     border-radius: 1rem;
     padding: .5rem 0 .5rem 0;
     justify-content: space-evenly;
 }
-
 .footer ul li {
     color: silver;
 }
-
 a,
 a:visited {
     text-decoration: none;
 }
-
 a:hover {
+    font-weight: bold;
+}
+.footer a:hover {
+    font-weight: bold;
     color: white;
 }
-
 /* a, a:visited, a:hover, a:active {
     color: inherit;
   } */
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .main-projects {
         right: 50px;
-        height: 35vh;
-        max-height: 35vh;
+        height: 100vh;
+        max-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         row-gap: 50px;
         overflow-y: auto;
     }
-}
-
-
+} */
 @media (max-width: 480px) {
-    h1 {
-        font-size: 3.50rem;
+    body {
+        overflow: hidden;
     }
-
+    h1 {
+        font-size: 3.25rem;
+    }
     h2 {
         font-size: 1.75rem;
     }
-
     h3 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
-
     p,
     label {
         font-size: 1rem;
     }
-
     ul {
         list-style-type: none;
         padding: 0;
     }
-
     li {
         font-size: 1rem;
     }
-
     nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 40px;
         display: flex;
+        flex-direction: row-reverse;
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        transform: unset;
+        transform-origin: initial;
+        padding-left: 10px;
+        padding-right: 10px;
     }
-
     fieldset {
-        margin-top: 20px;
+        margin-top: 1vh;
         position: unset;
         width: 100%;
         max-width: 100%;
         border: none;
     }
-
+    fieldset * {
+        display: block;
+    }
     fieldset input {
         margin-bottom: 1rem;
         width: 100%;
@@ -288,15 +275,9 @@ a:hover {
         padding-left: 5px;
         font-size: 1rem;
     }
-
-    fieldset * {
-        display: block;
-    }
-
     fieldset label {
         margin-bottom: 10px;
     }
-
     fieldset textarea {
         width: 100%;
         height: 120px;
@@ -306,37 +287,61 @@ a:hover {
         resize: none;
         font-size: 1rem;
     }
-
-    .avalon-logo {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        height: 40px;
-    }
-    
     .avalon-icon {
-        height: inherit;
+        height: 30px;
         margin-right: 0.5rem;
+        transform: unset;
     }
-
+    .avalon-lettermark {
+        display: block;
+        position: fixed;
+        top: 5px;
+        left: 40px;
+    }
     .container {
-        padding: 20px;
         height: 100vh;
+        width: 100%;
+        padding: 3vh;
+        margin-left: unset;
+        background-color: var(--main-background);
+        overflow: hidden;
     }
-
+    .circular-backing {
+        position: fixed;
+        top: unset;
+        bottom: -60vh;
+        left: 0;
+        width: 120vh;
+        height: 120vh;
+        border-radius: 50%;
+        background-color: #d2d2d2;
+        z-index: -1;
+    }
     .main {
-        margin-top: 12vh;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        overflow: visible;
     }
-
+    .main-content {
+        margin-top: 15vh;
+    }
+    .main-content p {
+        width: 100%;
+        
+    }
+    .main-content ul {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .main-content ul li {
+        margin-right: 1rem;
+    }
     .main-projects {
-        /* position: absolute;
-        top: 45vh; */
+        margin-top: 7vh;
         height: 35vh;
-        max-height: 35vh;
+        max-height: 50vh;
         right: 20px;
         display: flex;
         flex-direction: column;
@@ -344,37 +349,18 @@ a:hover {
         row-gap: 30px;
         overflow-y: auto;
     }
-
-    .main-content p {
-        /* margin-top: 30px; */
-        width: 100%;
-
+    .project h2 {
+        margin-left: 0.5rem;
     }
-
-    .main-content ul {
-        display: flex;
-        align-items: flex-end;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-
-    .main-content ul li {
-        margin-right: 1rem;
-    }
-
     .footer {
-        /* position: absolute; */
         width: 100%;
         display: flex;
         justify-content: center;
     }
-    
     .footer ul {
         position: fixed;
         display: flex;
-        flex-wrap: wrap;
         width: 50vw;
-        bottom: 30px;
-        justify-content: space-evenly;
+        bottom: 7vh;
     }
 }

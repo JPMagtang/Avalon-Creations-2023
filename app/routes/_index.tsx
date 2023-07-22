@@ -46,6 +46,7 @@ export default function Index() {
   return (
     loading ? <Fade /> : (
       <div className="container">
+        <div className="circular-backing"></div>
         <Header />
         <div className="main">
           <div className="main-content">
