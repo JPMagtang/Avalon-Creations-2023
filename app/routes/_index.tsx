@@ -2,7 +2,7 @@ import type { LinksFunction } from "@remix-run/node";
 import type { V2_MetaFunction } from "@remix-run/node";
 import { useState, useEffect } from 'react';
 import stylesUrl from "~/styles/global.css";
-// import stylesSmall from "~/styles/global-small.css";
+
 import projectsData from "~/projects-data";
 import Fade from "~/components/Fade";
 
@@ -13,7 +13,6 @@ import Footer from "~/components/Footer";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: stylesUrl }
-  // { rel: "stylesheet", href: stylesSmall }
 ];
 
 export const meta: V2_MetaFunction = () => {

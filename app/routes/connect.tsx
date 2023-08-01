@@ -5,7 +5,7 @@ import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 
 export const links: LinksFunction = () => [
-    { rel: "stylesheet", href: stylesUrl },
+    { rel: "stylesheet", href: stylesUrl }
   ];
   
 
@@ -17,7 +17,11 @@ export default function About() {
           <div className="main-content">
             <p>Curious about something?</p>
             <h1 className="main-header">CONNECT</h1>
+            <p>GitHub</p>
+            <p>LinkedIn</p>
           </div>
+          {/* <div className="main-connect">
+          </div> */}
           <form>
             <fieldset>
                 <label htmlFor="email">Email:</label>

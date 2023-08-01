@@ -1,8 +1,8 @@
 import { Link } from "@remix-run/react";
 import avalonLogo from "app/images/avalon-logo.png"
 
-
 export default function Header() {
+
     return (
         <nav>
             <Link to="/about"><p className="avalon-creator">JP Magtang</p></Link>
