@@ -15,11 +15,11 @@ export default function About() {
         <Header />
         <div className="main">
           <div className="main-content">
-            <p>Greetings! I’m</p>
-            <h1 className="main-header">JP MAGTANG</h1>
-            <p>I created Avalon as a space for my digital creations. You can see here the choice pick of my works in architecture, UX/UI design, and software development.
-            <br /><br />I am originally from the field of design, but the winds led me to software development which I’m equally, if not more, passionate about.
-            <br /><br />I greatly appreciate your visit here and please feel free to reach out.</p>
+            <p>Welcome to</p>
+            <h1 className="main-header">BLOGS</h1>
+            <p>There's not much here right now. But, I plan to fill this space with my discoveries and learnings in Software Engineering along the way.
+                <br />So, stay tuned!
+            </p>
           </div>
         </div>
         <Footer />
