@@ -1,51 +1,51 @@
 export default [
-    {
-        id: 1,
-        projectName: "Chronospace",
-        yearCreated: 2023,
-        projectType: "Personal",
-        projectLink: "",
-    },
+    // {
+    //     id: 1,
+    //     projectName: "Chronospace",
+    //     yearCreated: 2023,
+    //     projectType: "Ongoing",
+    //     projectLink: "",
+    // },
     {
         id: 2,
         projectName: "Karisma.Co",
         yearCreated: 2023,
-        projectType: "Commision",
-        projectLink: "",
+        projectType: "Commerce",
+        projectLink: "https://jpmagtang.github.io/KarismaCo/",
     },
     {
         id: 3,
         projectName: "Louis Kahn",
         yearCreated: 2023,
         projectType: "Personal",
-        projectLink: "",
+        projectLink: "https://jpmagtang.github.io/TributePage-LouisKahn/",
     },
     {
         id: 4,
         projectName: "Your Favorite Starter",
         yearCreated: 2022,
         projectType: "Personal",
-        projectLink: "",
+        projectLink: "https://jpmagtang.github.io/SurveyForm-StarterPokemon/",
     },
-    {
-        id: 5,
-        projectName: "Project Name",
-        yearCreated: 2023,
-        projectType: "Personal",
-        projectLink: "",
-    },
-    {
-        id: 6,
-        projectName: "Project Name",
-        yearCreated: 2023,
-        projectType: "Personal",
-        projectLink: "",
-    },
-    {
-        id: 7,
-        projectName: "Project Name",
-        yearCreated: 2023,
-        projectType: "Personal",
-        projectLink: "",
-    }
+    // {
+    //     id: 5,
+    //     projectName: "Project Name",
+    //     yearCreated: 2023,
+    //     projectType: "Personal",
+    //     projectLink: "",
+    // },
+    // {
+    //     id: 6,
+    //     projectName: "Project Name",
+    //     yearCreated: 2023,
+    //     projectType: "Personal",
+    //     projectLink: "",
+    // },
+    // {
+    //     id: 7,
+    //     projectName: "Project Name",
+    //     yearCreated: 2023,
+    //     projectType: "Personal",
+    //     projectLink: "",
+    // }
 ]
