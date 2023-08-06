@@ -23,11 +23,11 @@ export default function About() {
             </ul>
           </div>
           <div className="main-connect">
-            <form className="contact-form" action="https://formsubmit.co/jpmagtang@gmail.com" method="POST">
+            <form className="contact-form" action="https://formsubmit.co/319f7a92af306921edfb5ceab9b8e355" method="POST">
                 {/* HONEYPOT */}
-                <input type="text" name="honey" className="hidden" />
+                <input type="text" name="_honey" className="hidden" />
                 {/* CAPTCHA DISABLE */}
-                <input type="hidden" name="captcha" value="false" />
+                <input type="hidden" name="_captcha" value="false" />
                 {/* TO SUCCESS PAGE */}
                 {/* <input type="hidden" name="success" value="linkToSuccessPage" /> */}
                 <label htmlFor="Name">Name:</label>
