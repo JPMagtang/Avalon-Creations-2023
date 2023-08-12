@@ -79,6 +79,7 @@ form input {
     border: 1px solid gray;
     padding-left: 1rem;
     font-size: 1rem;
+    background-color: #ffffff80;
 }
 
 input:focus,
@@ -102,6 +103,7 @@ form textarea {
     padding: 1rem;
     resize: none;
     font-size: 1rem;
+    background-color: #ffffff80;
 }
 
 .hidden {
@@ -127,6 +129,7 @@ input[type="submit"]:hover {
     font-weight: bold;
     mix-blend-mode: unset;
     border: 1px solid gray;
+    filter: drop-shadow(0 1px 3px #106466);
 }
 
 .avalon-icon {
@@ -274,6 +277,15 @@ a:visited {
 
 a:hover {
     font-weight: bold;
+    filter: drop-shadow(0 1px 3px);
+    color: white;
+}
+
+.project a:hover {
+    font-weight: bold;
+    filter: drop-shadow(0 1px 3px);
+    color: white;
+    mix-blend-mode: normal;
 }
 
 .footer a:hover {
@@ -281,6 +293,12 @@ a:hover {
     color: white;
     filter: drop-shadow(0 1px 3px);
 }
+
+/* .active-page {
+    font-weight: 600;
+    color: white;
+    filter: drop-shadow(0 1px 3px);
+} */
 
 @media (max-width: 480px) {
     body {

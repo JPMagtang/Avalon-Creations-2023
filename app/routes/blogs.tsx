@@ -18,7 +18,7 @@ export default function About() {
         <div className="main">
           <div className="main-content">
             <p>Welcome to</p>
-            <h1 className="hero glitch layers" data-text="BLOGS">BLOGS</h1>
+            <h1 className="hero glitch layers" data-text="BLOGS"><span>BLOGS</span></h1>
             <p>There's not much here right now. But, I plan to fill this space with my discoveries and learnings in Software Engineering along the way.
                 <br />So, stay tuned!
             </p>
