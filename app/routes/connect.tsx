@@ -17,10 +17,10 @@ export default function About() {
         <div className="main">
           <div className="main-content">
             <p>Curious about something?</p>
-            <h1 className="hero glitch layers" data-text="CONNECT">CONNECT</h1>
+            <h1 className="hero glitch layers" data-text="CONNECT"><span>CONNECT</span></h1>
             <ul>
-              <li><a href="https://github.com/JPMagtang">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/jp-magtang-166785149/">LinkedIn</a></li>
+              <li><a href="https://github.com/JPMagtang" target="_blank">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/jp-magtang-166785149/" target="_blank">LinkedIn</a></li>
             </ul>
           </div>
           <div className="main-connect">

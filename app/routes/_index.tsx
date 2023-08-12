@@ -52,7 +52,7 @@ export default function Index() {
         <div className="main">
           <div className="main-content">
             <p>A REALM FOR DIGITAL</p>
-            <h1 className="hero glitch layers" data-text="CREATIONS">CREATIONS</h1>
+            <h1 className="hero glitch layers" data-text="CREATIONS"><span>CREATIONS</span></h1>
             <ul>
               <li>Architecture</li>
               <li>UX|UI Design</li>
