@@ -1,27 +1,10 @@
-
-
-/* Using Autumn color palette */
-/* :root {
-    --main-background: #1A2A43;
-    --footer-nav: #3A5988;
-    --text-main: #C18638;
-    --text-general: white;
-    --text-hover: #C18638;
-} */
-/* :root {
-    --main-background: white;
-    --footer-nav: black;
-    --footer-text: white;
-    --text-main: black;
-    --text-general: black;
-    --text-hover: white;
-} */
 @font-face {
     font-family: "Advent Pro Regular";
     font-style: normal;
     font-weight: normal;
     src: local('Advent Pro Regular'), url("/fonts/AdventPro/AdventPro-Regular.woff") format('woff');
 }
+
 * {
     font-family: "Advent Pro Regular", "Lato", sans-serif;
     box-sizing: border-box;
@@ -30,30 +13,38 @@
     color: var(--text-general);
     /* border: 1px solid red; */
 }
+
 body {
     overflow: hidden;
+    background-image: linear-gradient(to right, #1f2422 5%, #106466);
 }
-h1 {
-    font-size: 6.25rem;
-    color: var(--text-main);
-}
+
 h2 {
     font-size: 3rem;
 }
+
 h3 {
     font-size: 2.25rem;
+    font-weight: 100;
+    color: #D2E9E3;
 }
+
 p,
 label {
     font-size: 1.8rem;
+    color: #D2E9E3;
 }
+
 ul {
     list-style-type: none;
     padding: 0;
+    color: #D2E9E3;
 }
+
 li {
     font-size: 1.75rem;
 }
+
 nav {
     position: fixed;
     top: 0;
@@ -65,18 +56,21 @@ nav {
     align-items: center;
     transform: rotate(-90deg) translateX(-100%);
     transform-origin: left top;
-    background-color: #d2d2d2;
     padding-left: 30px;
     padding-right: 20px;
+    border-bottom: 1px solid gray;
 }
+
 form {
     width: 35vw;
     right: 50px;
     border: none;
 }
+
 form * {
     display: block;
 }
+
 form input {
     margin-bottom: 1.5rem;
     width: 100%;
@@ -86,9 +80,20 @@ form input {
     padding-left: 1rem;
     font-size: 1rem;
 }
+
+input:focus,
+textarea:focus {
+    outline: none !important;
+    border: 1px solid #1f2422;
+    box-shadow: 0 0 10px #106466;
+}
+
 form label {
     margin-bottom: 0.5rem;
+    /* color: #1f2422; */
+    mix-blend-mode: difference;
 }
+
 form textarea {
     width: 100%;
     height: 220px;
@@ -98,6 +103,7 @@ form textarea {
     resize: none;
     font-size: 1rem;
 }
+
 .hidden {
     display: none;
 }
@@ -107,24 +113,31 @@ form textarea {
     height: 40px;
     font-size: 1.25rem;
     border-radius: 5px;
-    border: 1px solid gray;
+    border: 1px solid white;
     margin-top: 1.5rem;
-   /* padding: 10px; */
+    color: white;
+    background-color: transparent;
+    mix-blend-mode: difference;
 }
 
 input[type="submit"]:hover {
     cursor: pointer;
-    background-color: black;
+    background-color: #1f2422;
     color: white;
     font-weight: bold;
+    mix-blend-mode: unset;
+    border: 1px solid gray;
 }
+
 .avalon-icon {
     height: 60px;
     transform: rotate(90deg);
 }
+
 .avalon-icon img {
     height: inherit;
 }
+
 .container {
     height: 100vh;
     padding: 5vh;
@@ -132,35 +145,72 @@ input[type="submit"]:hover {
     background-color: var(--main-background);
     overflow: hidden;
 }
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
 .circular-backing {
+    --size: 120vh;
+    --speed: 30s;
+    --easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+    --blur-size: 10vh;
+
     position: fixed;
+    width: var(--size);
+    height: var(--size);
     top: -10vh;
     left: 55%;
-    width: 120vh;
-    height: 120vh;
-    border-radius: 50%;
-    background-color: #d2d2d2;
     z-index: -1;
+    /* filter: blur(calc(var(--blur-size) / 7)); */
+    filter: blur(calc(var(--blur-size)));
+    /* background-image: linear-gradient(hsl(158, 82, 57, 85%), hsl(252, 82, 57)); */
+    background-image: linear-gradient(#FFCB9B, #D8B08C);
+    animation: rotate var(--speed) var(--easing) alternate infinite;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
+
+/* @media (min-width: 720px) {
+    .gradient {
+      --size: 500px;
+    }
+  } */
+
+/* This is just to transition when you change the viewport size. */
+/* * {
+    transition: all 0.25s ease-out;
+  } */
+
 .main {
     display: flex;
     justify-content: space-between;
 }
+
 .main-content {
     margin-top: 13vh;
 }
+
 .main-content p {
     width: 45vw;
 }
+
 .main-content ul {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
     width: 50vw;
 }
+
 .main-content ul li {
     margin-right: 2rem;
 }
+
 .main-projects,
 .main-connect {
     height: 90vh;
@@ -177,87 +227,93 @@ input[type="submit"]:hover {
     margin-left: 1rem;
     text-align: right;
 }
+
 .main-projects::-webkit-scrollbar {
     display: none;
 }
+
 .project {
+    color: white;
     display: flex;
     align-items: baseline;
+    mix-blend-mode: difference;
     /* padding: calc(var(--pad)*2 + 96px) calc(var(--pad)*2); */
 }
+
 .project h2 {
     margin-left: 1rem;
     text-align: right;
 }
+
 .footer {
     width: 100%;
     display: flex;
 }
+
 .footer ul {
     position: fixed;
     display: flex;
     flex-wrap: wrap;
     width: 30vw;
     bottom: 10vh;
-    background-color: black;
+    background-color: #1f2422;
+    border: 1px solid gray;
     border-radius: 1rem;
     padding: .5rem 0 .5rem 0;
     justify-content: space-evenly;
 }
+
 .footer ul li {
     color: silver;
 }
+
 a,
 a:visited {
     text-decoration: none;
 }
+
 a:hover {
     font-weight: bold;
 }
-.footer a:hover {
-    font-weight: bold;
-    color: white;
-}
-/* a, a:visited, a:hover, a:active {
-    color: inherit;
-  } */
 
-/* @media (max-width: 768px) {
-    .main-projects {
-        right: 50px;
-        height: 100vh;
-        max-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        row-gap: 50px;
-        overflow-y: auto;
-    }
-} */
+.footer a:hover {
+    font-weight: 600;
+    color: white;
+    filter: drop-shadow(0 1px 3px);
+}
+
 @media (max-width: 480px) {
     body {
         overflow: hidden;
+        background-image: linear-gradient(#1f2422 20px, #106466);
     }
+
     h1 {
         font-size: 3.25rem;
     }
+
     h2 {
         font-size: 1.75rem;
     }
+
     h3 {
         font-size: 1.5rem;
     }
+
     p,
     label {
         font-size: 1rem;
     }
+
     ul {
         list-style-type: none;
         padding: 0;
     }
+
     li {
         font-size: 1rem;
     }
+
     nav {
         position: fixed;
         top: 0;
@@ -274,6 +330,7 @@ a:hover {
         padding-right: 10px;
         background-color: unset;
     }
+
     form {
         margin-top: 1vh;
         position: unset;
@@ -281,9 +338,11 @@ a:hover {
         max-width: 100%;
         border: none;
     }
+
     form * {
         display: block;
     }
+
     form input {
         margin-bottom: 1rem;
         width: 100%;
@@ -293,9 +352,17 @@ a:hover {
         padding-left: 5px;
         font-size: 1rem;
     }
+
+    .submit-button {
+        height: 2rem;
+        border-radius: 5px;
+        margin-top: 1.5rem;
+    }
+
     form label {
         margin-bottom: 10px;
     }
+
     form textarea {
         width: 100%;
         height: 120px;
@@ -305,18 +372,21 @@ a:hover {
         resize: none;
         font-size: 1rem;
     }
+
     .avalon-icon {
         height: 30px;
-        margin-top: 10px;
+        margin-top: 5px;
         margin-right: 0.5rem;
         transform: unset;
     }
+
     .avalon-lettermark {
         display: block;
         position: fixed;
         top: 5px;
         left: 40px;
     }
+
     .container {
         height: 100vh;
         width: 100%;
@@ -325,35 +395,37 @@ a:hover {
         background-color: var(--main-background);
         overflow: hidden;
     }
+
     .circular-backing {
+        --size: 110vh;
         position: fixed;
         top: unset;
         bottom: -60vh;
         left: 0;
-        width: 120vh;
-        height: 120vh;
-        border-radius: 50%;
-        background-color: #d2d2d2;
-        z-index: -1;
     }
+
     .main {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
+
     .main-content p {
         width: 100%;
-        
+
     }
+
     .main-content ul {
         display: flex;
         align-items: flex-end;
         flex-wrap: wrap;
         width: 100%;
     }
+
     .main-content ul li {
         margin-right: 1rem;
     }
+
     .main-projects,
     .main-connect {
         margin-top: 7vh;
@@ -366,17 +438,21 @@ a:hover {
         row-gap: 30px;
         overflow-y: auto;
     }
+
     .main-connect {
         justify-content: unset;
     }
+
     .project h2 {
         margin-left: 0.5rem;
     }
+
     .footer {
         width: 100%;
         display: flex;
         justify-content: center;
     }
+
     .footer ul {
         position: fixed;
         display: flex;

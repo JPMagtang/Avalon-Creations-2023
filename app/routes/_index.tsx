@@ -1,7 +1,8 @@
 import type { LinksFunction } from "@remix-run/node";
 import type { V2_MetaFunction } from "@remix-run/node";
 import { useState, useEffect } from 'react';
-import stylesUrl from "~/styles/global.css";
+import globalStyle from "~/styles/global.css";
+import glitchStyle from "~/styles/glitch.css"
 
 import projectsData from "~/projects-data";
 import Fade from "~/components/Fade";
@@ -12,7 +13,8 @@ import Project from "~/components/Project";
 import Footer from "~/components/Footer";
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: stylesUrl }
+  { rel: "stylesheet", href: globalStyle },
+  { rel: "stylesheet", href: glitchStyle }
 ];
 
 export const meta: V2_MetaFunction = () => {
@@ -50,7 +52,7 @@ export default function Index() {
         <div className="main">
           <div className="main-content">
             <p>A REALM FOR DIGITAL</p>
-            <h1 className="main-header">CREATIONS</h1>
+            <h1 className="hero glitch layers" data-text="CREATIONS">CREATIONS</h1>
             <ul>
               <li>Architecture</li>
               <li>UX|UI Design</li>

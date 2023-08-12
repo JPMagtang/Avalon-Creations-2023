@@ -5,8 +5,8 @@ export default function Header() {
 
     return (
         <nav>
-            <Link to="/about"><p className="avalon-creator">JP Magtang</p></Link>
-            <Link to="/"><h3 className="avalon-lettermark">AVALON</h3></Link>
+            <p className="avalon-creator"><Link to="/about">JP Magtang</Link></p>
+            <h3 className="avalon-lettermark"><Link to="/">AVALON</Link></h3>
             <Link to="/" className="avalon-icon"><img src={avalonLogo} /></Link>
         </nav>
     )
