@@ -1,13 +1,14 @@
 import type { LinksFunction } from "@remix-run/node";
-import stylesUrl from "~/styles/global.css";
+import globalStyle from "~/styles/global.css";
+import glitchStyle from "~/styles/glitch.css"
 
 import Header from "~/components/Header";
 import Footer from "~/components/Footer";
 
 export const links: LinksFunction = () => [
-    { rel: "stylesheet", href: stylesUrl }
+    { rel: "stylesheet", href: globalStyle },
+    { rel: "stylesheet", href: glitchStyle }
   ];
-  
 
 export default function About() {
     return (
@@ -16,7 +17,7 @@ export default function About() {
         <div className="main">
           <div className="main-content">
             <p>Curious about something?</p>
-            <h1 className="main-header">CONNECT</h1>
+            <h1 className="hero glitch layers" data-text="CONNECT">CONNECT</h1>
             <ul>
               <li><a href="https://github.com/JPMagtang">GitHub</a></li>
               <li><a href="https://www.linkedin.com/in/jp-magtang-166785149/">LinkedIn</a></li>
