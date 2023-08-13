@@ -1,58 +1,31 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { LinksFunction } from "@remix-run/node";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   Links,
   LiveReload,
   Meta,
-  Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
-// Styles
-import loaderStyle from "~/styles/loader.css";
+
 // Components
+import Layout from "./components/Layout";
 import Loader from "./components/Loader";
+import AnimatedOutlet from "./components/AnimatedOutlet";
+import { SwitchTransition, CSSTransition } from 'react-transition-group';
+// Styles
+import globalStyle from "~/styles/global.css";
+import loaderStyle from "~/styles/loader.css";
+import transitionStyle from "~/styles/transition.css"
 
 export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: loaderStyle }
+  { rel: "stylesheet", href: globalStyle },
+  { rel: "stylesheet", href: loaderStyle },
+  { rel: "stylesheet", href: transitionStyle }
 ];
 
-export default function App() {
-  // INITIAL PAGE LOADING EFFECT
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2500);
-  }, []);
-
-  // CURSOR EFFECT
-  // Not working. To figure out
-  // const [cursorPosition, setCursorPosition] = useState({
-  //   x: 0,
-  //   y: 0
-  // })
-  // const [cursorVariant, setCursorVariant] = useState("default");
-  // console.log(cursorPosition);
-
-  // useEffect(() => {
-  //   const cursorMove = (e:any) => {
-  //     console.log(e); 
-  //     setCursorPosition({
-  //       x: e.clientX,
-  //       y: e.clientY
-  //     })
-  //   }
-  //   window.addEventListener("cursorMove", cursorMove);
-
-  //   return () => {
-  //     window.removeEventListener("cursorMove", cursorMove);
-  //   }
-
-  // }, []);
-
+function Document({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
@@ -62,12 +35,45 @@ export default function App() {
         <Links />
       </head>
       <body>
-          {/* <Cursor /> Not working. To figure out */}
-          {loading ? <Loader /> : <Outlet />}
-          <ScrollRestoration />
-          <Scripts />
-          <LiveReload />
+        {children}
+        <ScrollRestoration />
+        <Scripts />
+        {process.env.NODE_ENV === 'development' && <LiveReload />}
       </body>
     </html>
+  );
+}
+
+export default function App() {
+  // Initial page loading effect.
+  const location = useLocation()
+  const nodeRef = useRef(null)
+
+  const [isLoading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2500);
+  }, []);
+
+  return (
+    <Document>
+    {isLoading ? <Loader /> : (<Layout>
+      <SwitchTransition>
+        {/* Make this transition a glitch effect. */}
+        <CSSTransition
+          key={location.pathname}
+          timeout={300}
+          nodeRef={nodeRef}
+          classNames="fade"
+        >
+          <div ref={nodeRef} className="transition-all">
+            <AnimatedOutlet />
+          </div>
+        </CSSTransition>
+      </SwitchTransition>
+    </Layout>)}
+  </Document>
   );
 }
