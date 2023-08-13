@@ -1,9 +1,22 @@
-import React from "react";
-import { Link, NavLink, useLocation } from "@remix-run/react";
-import Fade from "./Fade";
+import { useState, useEffect } from "react";
+import { NavLink } from "@remix-run/react";
 
 export default function Navigation() {
-    const location = useLocation()
+
+    //Reserved for fututre reference
+    // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    // useEffect(() => {
+    //     const handleResize = () => {
+    //         setWindowWidth(window.innerWidth);
+    //     };
+
+    //     window.addEventListener("resize", handleResize);
+    //     return () => {
+    //         window.removeEventListener("resize", handleResize);
+    //     };
+    // }, []);
+
     return (
         <div className="navigation">
             <ul>
