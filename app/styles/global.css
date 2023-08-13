@@ -248,12 +248,12 @@ input[type="submit"]:hover {
     text-align: right;
 }
 
-.footer {
+.navigation {
     width: 100%;
     display: flex;
 }
 
-.footer ul {
+.navigation ul {
     position: fixed;
     display: flex;
     flex-wrap: wrap;
@@ -266,7 +266,7 @@ input[type="submit"]:hover {
     justify-content: space-evenly;
 }
 
-.footer ul li {
+.navigation ul li {
     color: silver;
 }
 
@@ -288,7 +288,7 @@ a:hover {
     mix-blend-mode: normal;
 }
 
-.footer a:hover {
+.navigation a:hover {
     font-weight: 600;
     color: white;
     filter: drop-shadow(0 1px 3px);
@@ -465,13 +465,13 @@ a:hover {
         margin-left: 0.5rem;
     }
 
-    .footer {
+    .navigation {
         width: 100%;
         display: flex;
         justify-content: center;
     }
 
-    .footer ul {
+    .navigation ul {
         position: fixed;
         display: flex;
         width: 50vw;
