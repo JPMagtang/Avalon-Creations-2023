@@ -1,6 +1,8 @@
 import type { LinksFunction } from "@remix-run/node";
 import globalStyle from "~/styles/global.css";
 import glitchStyle from "~/styles/glitch.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: globalStyle },
@@ -14,8 +16,8 @@ export default function About() {
         <p>Curious about something?</p>
         <h1 className="hero glitch layers" data-text="CONNECT"><span>CONNECT</span></h1>
         <ul>
-          <li><a href="https://github.com/JPMagtang" target="_blank">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/jp-magtang-166785149/" target="_blank">LinkedIn</a></li>
+          <li><a href="https://github.com/JPMagtang" target="_blank"><FontAwesomeIcon className="icon" icon={faGithub} />GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/jp-magtang-166785149/" target="_blank"><FontAwesomeIcon className="icon" icon={faLinkedin} />LinkedIn</a></li>
         </ul>
       </div>
       <div className="main-connect">

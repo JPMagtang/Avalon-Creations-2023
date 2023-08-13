@@ -132,6 +132,10 @@ input[type="submit"]:hover {
     transform: rotate(90deg);
 }
 
+.icon {
+    margin-right: 2px;
+}
+
 .avalon-icon img {
     height: inherit;
 }
@@ -183,6 +187,7 @@ input[type="submit"]:hover {
     margin-top: 13vh;
 }
 
+.main-content ul,
 .main-content p {
     margin-top: 1rem;
     width: 50vw;
@@ -192,7 +197,6 @@ input[type="submit"]:hover {
     display: flex;
     align-items: flex-end;
     flex-wrap: wrap;
-    width: 50vw;
 }
 
 .main-content ul li {
@@ -446,7 +450,8 @@ a:hover {
     .navigation ul {
         position: fixed;
         display: flex;
-        min-width: 50vw;
+        min-width: 55vw;
         bottom: 7vh;
+        font-size: 0.8rem;
     }
 }
