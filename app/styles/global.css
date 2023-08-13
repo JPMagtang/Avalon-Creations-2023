@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     color: var(--text-general);
+    /* transition: all 0.25s ease-out; */
     /* border: 1px solid red; */
 }
 
@@ -63,12 +64,12 @@ nav {
 
 form {
     width: 35vw;
-    right: 50px;
-    border: none;
+    display: block;
 }
 
-form * {
-    display: block;
+form label {
+    margin-bottom: 0.5rem;
+    mix-blend-mode: difference;
 }
 
 form input {
@@ -82,19 +83,6 @@ form input {
     background-color: #ffffff80;
 }
 
-input:focus,
-textarea:focus {
-    outline: none !important;
-    border: 1px solid #1f2422;
-    box-shadow: 0 0 10px #106466;
-}
-
-form label {
-    margin-bottom: 0.5rem;
-    /* color: #1f2422; */
-    mix-blend-mode: difference;
-}
-
 form textarea {
     width: 100%;
     height: 220px;
@@ -106,8 +94,11 @@ form textarea {
     background-color: #ffffff80;
 }
 
-.hidden {
-    display: none;
+input:focus,
+textarea:focus {
+    outline: none !important;
+    border: 1px solid #1f2422;
+    box-shadow: 0 0 10px #106466;
 }
 
 .submit-button {
@@ -130,6 +121,10 @@ input[type="submit"]:hover {
     mix-blend-mode: unset;
     border: 1px solid gray;
     filter: drop-shadow(0 1px 3px #106466);
+}
+
+.hidden {
+    display: none;
 }
 
 .avalon-icon {
@@ -179,17 +174,6 @@ input[type="submit"]:hover {
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
 }
 
-/* @media (min-width: 720px) {
-    .gradient {
-      --size: 500px;
-    }
-  } */
-
-/* This is just to transition when you change the viewport size. */
-/* * {
-    transition: all 0.25s ease-out;
-  } */
-
 .main {
     display: flex;
     justify-content: space-between;
@@ -200,7 +184,8 @@ input[type="submit"]:hover {
 }
 
 .main-content p {
-    width: 45vw;
+    margin-top: 1rem;
+    width: 50vw;
 }
 
 .main-content ul {
@@ -226,11 +211,6 @@ input[type="submit"]:hover {
     overflow-y: auto;
 }
 
-.connect h2 {
-    margin-left: 1rem;
-    text-align: right;
-}
-
 .main-projects::-webkit-scrollbar {
     display: none;
 }
@@ -238,6 +218,8 @@ input[type="submit"]:hover {
 .project {
     color: white;
     display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
     align-items: baseline;
     mix-blend-mode: difference;
     /* padding: calc(var(--pad)*2 + 96px) calc(var(--pad)*2); */
@@ -246,6 +228,13 @@ input[type="submit"]:hover {
 .project h2 {
     margin-left: 1rem;
     text-align: right;
+}
+
+.project a:hover {
+    font-weight: bold;
+    filter: drop-shadow(0 1px 3px);
+    color: white;
+    mix-blend-mode: normal;
 }
 
 .navigation {
@@ -257,7 +246,7 @@ input[type="submit"]:hover {
     position: fixed;
     display: flex;
     flex-wrap: wrap;
-    width: 30vw;
+    min-width: 30vw;
     bottom: 10vh;
     background-color: #1f2422;
     border: 1px solid gray;
@@ -281,33 +270,16 @@ a:hover {
     color: white;
 }
 
-.project a:hover {
-    font-weight: bold;
-    filter: drop-shadow(0 1px 3px);
-    color: white;
-    mix-blend-mode: normal;
-}
-
 .navigation a:hover {
     font-weight: 600;
     color: white;
     filter: drop-shadow(0 1px 3px);
 }
 
-/* .active-page {
-    font-weight: 600;
-    color: white;
-    filter: drop-shadow(0 1px 3px);
-} */
-
 @media (max-width: 480px) {
     body {
         overflow: hidden;
         background-image: linear-gradient(#1f2422 20px, #106466);
-    }
-
-    h1 {
-        font-size: 3.25rem;
     }
 
     h2 {
@@ -474,7 +446,7 @@ a:hover {
     .navigation ul {
         position: fixed;
         display: flex;
-        width: 50vw;
+        min-width: 50vw;
         bottom: 7vh;
     }
 }
