@@ -9,9 +9,9 @@ export default [
     {
         id: 2,
         projectName: "Karisma.Co",
-        yearCreated: 2023,
+        yearCreated: "2023 (In-progress)",
         projectType: "Commerce",
-        projectLink: "https://jpmagtang.github.io/KarismaCo/",
+        projectLink: "https://karismaco.vercel.app/",
     },
     {
         id: 3,
