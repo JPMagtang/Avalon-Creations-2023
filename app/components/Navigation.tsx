@@ -22,8 +22,9 @@ export default function Navigation() {
             <ul>
                 <li><NavLink id="creations-link" to="/">Creations</NavLink></li>
                 <li><NavLink id="about-link" to="/about" >About</NavLink></li>
-                <li><NavLink id="connect-blogs" to="/blogs">Blogs</NavLink></li>
                 <li><NavLink id="connect-link" to="/connect">Connect</NavLink></li>
+                {/* For future expansion */}
+                {/* <li><NavLink id="connect-blogs" to="/blogs">Blogs</NavLink></li> */} 
             </ul>
         </div>
     )
