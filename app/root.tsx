@@ -63,9 +63,8 @@ export default function App() {
   const nodeRef = useRef(null)
 
   // Initial page loading effect.
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
   useEffect(() => {
-  setLoading(true);
   setTimeout(() => {
       setLoading(false);
       }, 2500);
