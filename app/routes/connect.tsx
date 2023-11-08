@@ -1,13 +1,5 @@
-import type { LinksFunction } from "@remix-run/node";
-import globalStyle from "~/styles/global.css";
-import glitchStyle from "~/styles/glitch.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
-
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: globalStyle },
-  { rel: "stylesheet", href: glitchStyle }
-];
 
 export default function About() {
   return (
