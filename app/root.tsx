@@ -62,24 +62,41 @@ export default function App() {
   const location = useLocation()
   const nodeRef = useRef(null)
 
-  return (
-    <Document>
-      <Layout>
-        <SwitchTransition>
-          {/* Make this transition a glitch effect. */}
-          <CSSTransition
-            key={location.pathname}
-            timeout={300}
-            nodeRef={nodeRef}
-            classNames="fade"
-          >
-            <div ref={nodeRef} className="transition-all">
-              <AnimatedOutlet />
-            </div>
-          </CSSTransition>
-        </SwitchTransition>
-      </Layout>
-    </Document>
-  );
+  // Initial page loading effect.
+  const [isLoading, setLoading] = useState(false);
+  useEffect(() => {
+  setLoading(true);
+  setTimeout(() => {
+      setLoading(false);
+      }, 2500);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <Document>
+        <Loader />
+      </Document>
+    )
+  } else {
+    return (
+      <Document>
+        <Layout>
+          <SwitchTransition>
+            {/* Make this transition a glitch effect. */}
+            <CSSTransition
+              key={location.pathname}
+              timeout={300}
+              nodeRef={nodeRef}
+              classNames="fade"
+            >
+              <div ref={nodeRef} className="transition-all">
+                <AnimatedOutlet />
+              </div>
+            </CSSTransition>
+          </SwitchTransition>
+        </Layout>
+      </Document>
+    );
+  }
 }
 
